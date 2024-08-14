@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ᚳᛉᚾᛏᛞᛉᛟᛋᚱᛏᛜᛏᚭᚾᛏ ᛑᛤᚱᛏᚭᚾᛏᛋᛇᛚᛏᚭᛏᛋᛟᛋᚱᛏ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('bngrnd.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            overflow: hidden;
+        }
+        .textbox {
+            background-color: rgba(51, 0, 102, 0.8);
+            color: #ffffff;
+            border: 3px dashed #800080;
+            border-radius: 30px;
+            padding: 30px;
+            width: 80%;
+            margin-bottom: 30px;
+            font-size: 20px;
+            box-shadow: 0px 0px 20px #800080;
+            transform: rotate(-3deg);
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+        .enter-button {
+            background-color: #4b0082;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: 2px solid #800080;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 0px 15px #800080;
+        }
+        .enter-button:hover {
+            background-color: #800080;
+        }
+        .hidden-content {
+            display: none;
+        }
+        audio {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="introScreen">
+        <h1>ᚳᛉᚾᛏᛞᛉᛟᛋᚱᛏᛜᛏᚭᚾᛏ ᛑᛤᚱᛏᚭᚾᛏᛋᛇᛚᛏᚭᛏᛋᛟᛋᚱᛏ</h1>
+        <button class="enter-button" onclick="enterSite()">Enter the End</button>
+    </div>
+
+    <div id="mainContent" class="hidden-content">
+        <textarea id="englishText" class="textbox" rows="4" placeholder="Enter English text here..."></textarea>
+        <br>
+        <textarea id="endText" class="textbox" rows="4" placeholder="End Language translation will appear here..."></textarea>
+
+        <audio id="backgroundMusic" controls autoplay loop>
+            <source src="background-music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById('introScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('backgroundMusic').play();
+        }
+
+        const customAlphabet = {
+            // Lowercase letters
+            'a': 'ᚭ',  'b': 'ᛒᛋ', 'c': 'ᚳᚢ', 'd': 'ᛞᛉ', 'e': 'ᛇᛏ',
+            'f': 'ᚠᛋ', 'g': 'ᚷᛉ', 'h': 'ᚻᛇ', 'i': 'ᛜᛏ', 'j': 'ᛃᛇ',
+            'k': 'ᚴᛉ', 'l': 'ᛚᛏ', 'm': 'ᛗᛇ', 'n': 'ᚾᛏ', 'o': 'ᛟᛋ',
+            'p': 'ᛈᛇ', 'q': 'ᛩᛉ', 'r': 'ᚱᛏ', 's': 'ᛋᛇ', 't': 'ᛏᛋ',
+            'u': 'ᚢᛇ', 'v': 'ᚡᛏ', 'w': 'ᚹᛉ', 'x': 'ᛪᛏ', 'y': 'ᚣᛇ',
+            'z': 'ᛉᛏ',
+
+            // Capital letters
+            'A': 'ᚱᛚ', 'B': 'ᛂᛃ', 'C': 'ᛒᛘ', 'D': 'ᛝᛟ', 'E': 'ᚳᛉ',
+            'F': 'ᛆᛋ', 'G': 'ᚧᛋ', 'H': 'ᛒᛠ', 'I': 'ᚾᛋ', 'J': 'ᛐᛉ',
+            'K': 'ᚷᛏ', 'L': 'ᛊᛉ', 'M': 'ᚺᛇ', 'N': 'ᚱᚾ', 'O': 'ᛉᚨ',
+            'P': 'ᛗᚢ', 'Q': 'ᛤᛦ', 'R': 'ᚥᛨ', 'S': 'ᛓᛝ', 'T': 'ᛑᛤ',
+            'U': 'ᚳᛧ', 'V': 'ᛣᚡ', 'W': 'ᚽᚷ', 'X': 'ᛆᛔ', 'Y': '᛬ᛍ',
+            'Z': 'ᛅᛦ',
+
+            // Numbers
+            '0': 'ᛊ', '1': 'ᛡ', '2': 'ᛒ', '3': 'ᛞ', '4': 'ᚷ',
+            '5': 'ᛗ', '6': 'ᛢ', '7': 'ᛤ', '8': 'ᛦ', '9': 'ᚾ',
+
+            // Symbols
+            '!': 'ᛩ', '@': 'ᛪ', '#': '᛫', '$': '᛭', '%': 'ᛯ',
+            '^': 'ᛰ', '&': 'ᛱ', '*': 'ᛲ', '(': 'ᛳ', ')': 'ᛴ',
+            '-': 'ᛵ', '_': 'ᛶ', '=': 'ᛷ', '+': 'ᛸ', '[': '᛹',
+            ']': '᛺', '{': '᛻', '}': '᛼', ';': '᛽', ':': '᛾',
+            "'": '᛿', '"': 'ᜁ', ',': 'ᜂ', '.': 'ᜃ', '/': 'ᜄ',
+            '\\': 'ᜅ', '?': 'ᜆ', '<': 'ᜇ', '>': 'ᜈ', '|': 'ᜉ',
+            '`': 'ᜊ', '~': 'ᜋ',
+
+            // Space
+            ' ': ' ',
+        };
+
+        const reverseAlphabet = Object.fromEntries(Object.entries(customAlphabet).map(([key, value]) => [value, key]));
+
+        document.getElementById('englishText').addEventListener('input', function() {
+            translateToEnd();
+        });
+
+        document.getElementById('endText').addEventListener('input', function() {
+            translateToEnglish();
+        });
+
+        function translateToEnd() {
+            const englishText = document.getElementById('englishText').value;
+            let translatedText = '';
+            for (let char of englishText) {
+                translatedText += customAlphabet[char] || char;
+            }
+            document.getElementById('endText').value = translatedText;
+        }
+
+        function translateToEnglish() {
+            let endText = document.getElementById('endText').value;
+            let translatedText = '';
+            let i = 0;
+
+            while (i < endText.length) {
+                let found = false;
+                for (let symbolLength = 2; symbolLength >= 1; symbolLength--) {
+                    let symbol = endText.substring(i, i + symbolLength);
+                    if (reverseAlphabet[symbol]) {
+                        translatedText += reverseAlphabet[symbol];
+                        i += symbolLength;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    translatedText += endText[i];
+                    i++;
+                }
+            }
+
+            document.getElementById('englishText').value = translatedText;
+        }
+    </script>
+</body>
+</html>
